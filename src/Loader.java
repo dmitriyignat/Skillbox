@@ -67,6 +67,19 @@ public class Loader
 
         Cat testCat = createCat(3000.0);
         System.out.println(testCat.getWeight());
+        testCat.setColor(Color.BLACK);
+        System.out.println(testCat.getColor());
+        System.out.println();
+
+        Cat clone = testCat.copyCat();
+        System.out.println(clone.getWeight());
+        System.out.println(clone.getColor());
+        System.out.println();
+
+        //Демонстрация того, что коты testCat и clone лишь 2 копии, но не являются одним и тем же объектом
+        System.out.println(testCat.equals(testCat));
+        System.out.println(testCat.equals(clone));
+
 
     }
 

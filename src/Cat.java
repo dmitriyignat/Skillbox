@@ -10,6 +10,13 @@
 * Урок 5. Создание объектов и конструктор
 * Создать в классе Cat ещё один конструктор так, чтобы массу кошки можно было задавать при создании кошки, и
 * создать в главном классе метод генерации кошки, как описано в видеоуроке.
+*
+* Урок 6. Инкапсуляция, геттеры и сеттеры
+* Создать у кошки геттер и сеттер для окраса.
+*
+* Урок 7. Копирование объектов
+* Создать у кошки метод создания её “глубокой” копии.
+
 * */
 public class Cat
 {
@@ -25,8 +32,8 @@ public class Cat
     private final int EYES_COUNT;
 
     private double eatenFoodWeight;
-
     private static int count;
+    private Color color;
 
     public Cat()
     {
@@ -71,6 +78,21 @@ public class Cat
 
     public static int getCount() {
         return count;
+    }
+
+    public Color getColor() {
+        return color;
+    }
+
+    public void setColor(Color color) {
+        this.color = color;
+    }
+
+    //копирование лучше реалищовывать через конструктор копирования. Но он выходит за рамки модуля
+    public Cat copyCat() {
+        Cat clone = new Cat(this.weight);
+        clone.setColor(this.color);
+        return clone;
     }
 
     public void poop() {
