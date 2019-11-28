@@ -21,6 +21,9 @@ public class Loader
         Cat murka = new Cat();
         Cat gav = new Cat();
 
+        //Кол-во котов до несчастного случая (их будет 6)
+        System.out.println(Cat.getCount());
+
         showWeightChange(vasyka);
 
         showWeightChange(matroskin);
@@ -51,6 +54,20 @@ public class Loader
             gav.meow();
         }
         System.out.println(gav.getStatus());
+        System.out.println();
+
+        //Узнаем сколько съел черныш. Убираем его грязное дело. Смотрим сколько он весит
+        System.out.println(chernish.getEatenFoodWeight());
+        chernish.poop();
+        System.out.println(chernish.getWeight());
+        System.out.println();
+
+        //Выжившие коты (3)
+        System.out.println(Cat.getCount());
+
+        Cat testCat = createCat(3000.0);
+        System.out.println(testCat.getWeight());
+
     }
 
 
@@ -66,5 +83,12 @@ public class Loader
         System.out.println(cat.getWeight());
         System.out.println("");
 
+    }
+
+    /*
+    * Метод генерации кошек с весом.
+    * */
+    private static Cat createCat(double weight) {
+        return new Cat(weight);
     }
 }
