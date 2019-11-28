@@ -1,4 +1,8 @@
-
+/*
+* Урок 2. Метод, параметры, return
+* Создать в классе Cat метод, который будет возвращать массу съеденной еды
+* Создать в классе Cat метод “сходить в туалет”, который будет уменьшать вес кошки и что-нибудь печатать.
+* */
 public class Cat
 {
     private double originWeight;
@@ -6,6 +10,8 @@ public class Cat
 
     private double minWeight;
     private double maxWeight;
+
+    private double eatenFoodWeight;
 
     public Cat()
     {
@@ -25,6 +31,7 @@ public class Cat
     public void feed(Double amount)
     {
         weight = weight + amount;
+        eatenFoodWeight = eatenFoodWeight + amount;
     }
 
     public void drink(Double amount)
@@ -35,6 +42,15 @@ public class Cat
     public Double getWeight()
     {
         return weight;
+    }
+
+    public double getEatenFoodWeight() {
+        return eatenFoodWeight;
+    }
+
+    public void poop() {
+        weight = weight - weight / 100;
+        System.out.println("Hey human, put it away!");
     }
 
     public String getStatus()
